@@ -37,11 +37,19 @@ public class Demo{
     int[] four = new int[6];
     int[] five  = new int[1];
     int[][] doble = {one, two, three, four, five};
-    System.out.println(arrToString(one));
-    System.out.println(arrToString(two));
-    System.out.println(arrToString(three));
-    System.out.println(arrToString(four));
-    System.out.println(arrToString(five));
     System.out.println(arrayDeepToString(doble));
+    System.out.println(create2DArray(4,4,4));
+    System.out.println(arrayDeepToString(create2DArray(4,4,4)));
+  }
+
+  public static int[][] create2DArray(int rows, int cols, int maxValue){
+    int[][] two = new int[rows][cols];
+    for(int i = 0; i < rows; i++){
+      for(int j = 0; j < cols; j++){
+        int give = (int) (Math.random()*maxValue+1);
+        two[i][j] = give;
+      }
+    }
+    return two;
   }
 }
