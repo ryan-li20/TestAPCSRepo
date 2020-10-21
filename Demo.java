@@ -7,8 +7,41 @@ public class Demo{
       System.out.println();
     }
   }
+
+  public static String arrToString(int[] arr){
+    String output = "{";
+    if(arr.length < 1){
+      return output + "}";
+    }
+    for(int i = 0; i < arr.length-1; i++){
+      output = output + arr[i] + ", ";
+    }
+    output = output + arr[arr.length-1] + "}";
+    return output;
+  }
+
+  public static String arrayDeepToString(int[][] arr){
+    String output = "{";
+    for(int i = 0; i < arr.length-1; i++){
+      output = output + arrToString(arr[i]);
+      output = output + ", ";
+    }
+    output = output + arrToString(arr[arr.length-1]) + "}";
+    return output;
+  }
+
   public static void main(String[] args){
-    int arg = Integer.parseInt(args[0]);
-    Demo.print(arg);
+    int[] one = new int[3];
+    int[] two = new int[5];
+    int[] three = new int[14];
+    int[] four = new int[6];
+    int[] five  = new int[1];
+    int[][] doble = {one, two, three, four, five};
+    System.out.println(arrToString(one));
+    System.out.println(arrToString(two));
+    System.out.println(arrToString(three));
+    System.out.println(arrToString(four));
+    System.out.println(arrToString(five));
+    System.out.println(arrayDeepToString(doble));
   }
 }
