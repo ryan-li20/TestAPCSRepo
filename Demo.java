@@ -31,25 +31,20 @@ public class Demo{
   }
 
   public static void main(String[] args){
-    int[] one = new int[3];
-    int[] two = new int[5];
-    int[] three = new int[14];
-    int[] four = new int[6];
-    int[] five  = new int[1];
-    int[][] doble = {one, two, three, four, five};
-    System.out.println(arrayDeepToString(doble));
-    System.out.println(create2DArray(4,4,4));
-    System.out.println(arrayDeepToString(create2DArray(4,4,4)));
+    print(Integer.parseInt(args[0]));
+    //System.out.println(arrayDeepToString(create2DArray(4,4,4)));
   }
 
   public static int[][] create2DArray(int rows, int cols, int maxValue){
     int[][] two = new int[rows][cols];
     for(int i = 0; i < rows; i++){
       for(int j = 0; j < cols; j++){
-        int give = (int) (Math.random()*maxValue+1);
+        int give = (int) (Math.random()*(maxValue+1));
         two[i][j] = give;
       }
     }
     return two;
   }
+
+  //public static int[][] create2DArrayRandomized(int rows, int cols, int maxValue)
 }
